@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desbravando o Mundo Digital - eBook Grátis</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Importa o SDK do EmailJS -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Importa o SDK atualizado do EmailJS -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         // Inicializa EmailJS com a Public Key
         (function() {
@@ -56,8 +56,8 @@
 
             // Parâmetros do template com dados do formulário
             const templateParams = {
-                user_name: document.getElementById("name").value, // Substituído por user_name
-                user_email: document.getElementById("email").value // Substituído por user_email
+                user_name: document.getElementById("name").value,
+                user_email: document.getElementById("email").value
             };
 
             // Envia o e-mail usando o EmailJS
