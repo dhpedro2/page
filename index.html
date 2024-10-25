@@ -8,9 +8,9 @@
     <!-- Importa o SDK do EmailJS -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        // Inicializa EmailJS com o seu User ID
+        // Inicializa EmailJS com a Public Key
         (function() {
-            emailjs.init("COWYx0Wmz_Q0AlFtq"); // Substitua por seu User ID do EmailJS
+            emailjs.init("COWYx0Wmz_Q0AlFtq"); // Substitua pela sua Public Key do EmailJS
         })();
     </script>
 </head>
@@ -56,16 +56,18 @@
 
             // Parâmetros do template com dados do formulário
             const templateParams = {
-                name: document.getElementById("name").value,
-                email: document.getElementById("email").value,
+                user_name: document.getElementById("name").value, // Substituído por user_name
+                user_email: document.getElementById("email").value // Substituído por user_email
             };
 
             // Envia o e-mail usando o EmailJS
             emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
                 .then(function(response) {
+                    console.log("E-mail enviado com sucesso!", response.status, response.text);
                     alert("O eBook foi enviado para o seu e-mail!");
                     document.getElementById("ebookForm").reset(); // Limpa o formulário
                 }, function(error) {
+                    console.error("Erro:", error); // Log detalhado para análise de erros
                     alert("Erro ao enviar o eBook. Tente novamente.");
                 });
         });
