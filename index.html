@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desbravando o Mundo Digital - eBook Grátis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Importa o SDK do EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Inicializa EmailJS com o seu User ID
+        (function() {
+            emailjs.init("COWYx0Wmz_Q0AlFtq"); // Substitua por seu User ID do EmailJS
+        })();
+    </script>
+</head>
+<body>
+    <!-- Container de partículas -->
+    <div id="particles-js"></div>
+    
+    <!-- Container principal da página -->
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1>Desbravando o Mundo Digital</h1>
+                <p class="subtitle">Guia completo com mais de 10 maneiras de ganhar dinheiro com a internet</p>
+            </header>
+            <main>
+                <p class="description">Quer aprender a usar a internet para ganhar dinheiro de verdade? Baixe agora o nosso eBook gratuito e descubra as melhores estratégias para transformar seu tempo online em renda!</p>
+                <form id="ebookForm">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                    
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                    
+                    <button type="submit">Baixar eBook Grátis</button>
+                </form>
+                <p class="disclaimer">*Não enviaremos spam. Somente conteúdo relevante.</p>
+            </main>
+        </div>
+        <div class="image">
+            <img src="https://cdn.discordapp.com/attachments/1003636737995710604/1299469612668420147/Design_sem_nome_1_1.png?ex=671d50e2&is=671bff62&hm=e644332282a8ddda9c7b12f44b13ddc1d121bfd31bbbdecbc6a7983d83c77b65&" alt="Capa do eBook Desbravando o Mundo Digital">
+        </div>
+    </div>
+
+    <!-- Link para o script do Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="index.js"></script>
+
+    <!-- JavaScript para envio de e-mail -->
+    <script>
+        // Função de envio do formulário
+        document.getElementById("ebookForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            // Parâmetros do template com dados do formulário
+            const templateParams = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+            };
+
+            // Envia o e-mail usando o EmailJS
+            emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
+                .then(function(response) {
+                    alert("O eBook foi enviado para o seu e-mail!");
+                    document.getElementById("ebookForm").reset(); // Limpa o formulário
+                }, function(error) {
+                    alert("Erro ao enviar o eBook. Tente novamente.");
+                });
+        });
+    </script>
+</body>
+</html>
