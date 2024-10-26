@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desbravando o Mundo Digital - eBook Grátis</title>
+    <title>Desbravando o Mundo Digital - E-Book Grátis</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Importa o SDK do EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        // Inicializa EmailJS com a sua Public Key
         (function() {
             emailjs.init({
-                publicKey: 'COWYx0Wmz_Q0AlFtq' // Substitua pela sua Public Key do EmailJS
+                publicKey: 'COWYx0Wmz_Q0AlFtq'
             });
         })();
     </script>
 </head>
 <body>
-    <!-- Container de partículas -->
     <div id="particles-js"></div>
-    
-    <!-- Container principal da página -->
     <div class="container">
         <div class="content">
             <header>
@@ -45,29 +40,20 @@
             <img src="https://cdn.discordapp.com/attachments/1003636737995710604/1299469612668420147/Design_sem_nome_1_1.png?ex=671d50e2&is=671bff62&hm=e644332282a8ddda9c7b12f44b13ddc1d121bfd31bbbdecbc6a7983d83c77b65&" alt="Capa do eBook Desbravando o Mundo Digital">
         </div>
     </div>
-
-    <!-- Link para o script do Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="index.js"></script>
-
-    <!-- JavaScript para envio de e-mail -->
     <script>
-        // Função de envio do formulário
         document.getElementById("ebookForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita o envio padrão do formulário
-
-            // Parâmetros do template com dados do formulário
+            event.preventDefault();
             const templateParams = {
-                user_email: document.getElementById("email").value, // E-mail do usuário
-                from_name: "Digital Ideias", // Nome que aparecerá no e-mail
-                name: document.getElementById("name").value, // Nome do usuário
+                user_email: document.getElementById("email").value,
+                from_name: "Digital Ideias",
+                name: document.getElementById("name").value, 
             };
-
-            // Envia o e-mail usando o EmailJS
             emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
                 .then(function(response) {
                     alert("O eBook foi enviado para o seu e-mail!");
-                    document.getElementById("ebookForm").reset(); // Limpa o formulário
+                    document.getElementById("ebookForm").reset(); 
                 }, function(error) {
                     alert("Erro ao enviar o eBook. Tente novamente.");
                 });
