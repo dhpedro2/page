@@ -56,7 +56,6 @@
                 name: name, 
             };
             
-            // Envia o email com o eBook via EmailJS
             emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
                 .then(function(response) {
                     alert("O eBook foi enviado para o seu e-mail!");
@@ -64,8 +63,6 @@
                 }, function(error) {
                     alert("Erro ao enviar o eBook. Tente novamente.");
                 });
-            
-            // Enviar nome e email para o Discord via Webhook com embed
             const discordWebhookUrl = "https://discord.com/api/webhooks/1299724241813639168/mrHwmqtYw125acqgHG4IaQfb7nMFr-vZKWdrfvifABU7uZfn9RBy7IFNczSC-ZWlN2aC"; // Insira a URL do webhook copiada
 
             fetch(discordWebhookUrl, {
@@ -77,7 +74,7 @@
                     embeds: [
                         {
                             title: "Novo download do E-Book",
-                            color: 5814783, // Escolha uma cor para a embed (aqui, um tom de azul)
+                            color: 5814783,
                             fields: [
                                 {
                                     name: "Nome",
