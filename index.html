@@ -45,11 +45,18 @@
     <script>
         document.getElementById("ebookForm").addEventListener("submit", function(event) {
             event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const currentDate = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+            
+            // Parâmetros do EmailJS
             const templateParams = {
-                user_email: document.getElementById("email").value,
+                user_email: email,
                 from_name: "Digital Ideias",
-                name: document.getElementById("name").value, 
+                name: name, 
             };
+            
+            // Envia o email com o eBook via EmailJS
             emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
                 .then(function(response) {
                     alert("O eBook foi enviado para o seu e-mail!");
@@ -57,6 +64,49 @@
                 }, function(error) {
                     alert("Erro ao enviar o eBook. Tente novamente.");
                 });
+            
+            // Enviar nome e email para o Discord via Webhook com embed
+            const discordWebhookUrl = "https://discord.com/api/webhooks/1299724241813639168/mrHwmqtYw125acqgHG4IaQfb7nMFr-vZKWdrfvifABU7uZfn9RBy7IFNczSC-ZWlN2aC"; // Insira a URL do webhook copiada
+
+            fetch(discordWebhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    embeds: [
+                        {
+                            title: "Novo download do E-Book",
+                            color: 5814783, // Escolha uma cor para a embed (aqui, um tom de azul)
+                            fields: [
+                                {
+                                    name: "Nome",
+                                    value: name,
+                                    inline: true
+                                },
+                                {
+                                    name: "E-mail",
+                                    value: email,
+                                    inline: true
+                                },
+                                {
+                                    name: "Data de Envio",
+                                    value: currentDate,
+                                    inline: false
+                                }
+                            ],
+                            footer: {
+                                text: "Desbravando o Mundo Digital",
+                                icon_url: "https://cdn.discordapp.com/attachments/1003636737995710604/1299469612668420147/Design_sem_nome_1_1.png" // Ícone opcional no rodapé
+                            }
+                        }
+                    ]
+                })
+            }).then(() => {
+                console.log("Dados enviados para o Discord com sucesso.");
+            }).catch((error) => {
+                console.error("Erro ao enviar para o Discord:", error);
+            });
         });
     </script>
 </body>
