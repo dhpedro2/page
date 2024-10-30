@@ -9,7 +9,7 @@
     <script>
         (function() {
             emailjs.init({
-                publicKey: 'COWYx0Wmz_Q0AlFtq'
+                publicKey: 'COWYx0Wmz_Q0AlFtq' // Substitua pela sua chave pública do EmailJS
             });
         })();
     </script>
@@ -53,7 +53,7 @@
             const templateParams = {
                 user_email: email,
                 from_name: "Digital Ideias",
-                name: name, 
+                name: name, // Variável personalizada para o nome
             };
             
             emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
@@ -63,7 +63,8 @@
                 }, function(error) {
                     alert("Erro ao enviar o eBook. Tente novamente.");
                 });
-            const discordWebhookUrl = "https://discord.com/api/webhooks/1299724241813639168/mrHwmqtYw125acqgHG4IaQfb7nMFr-vZKWdrfvifABU7uZfn9RBy7IFNczSC-ZWlN2aC"; // Insira a URL do webhook copiada
+
+            const discordWebhookUrl = "https://discord.com/api/webhooks/1299724241813639168/mrHwmqtYw125acqgHG4IaQfb7nMFr-vZKWdrfvifABU7uZfn9RBy7IFNczSC-ZWlN2aC"; // URL do webhook do Discord
 
             fetch(discordWebhookUrl, {
                 method: 'POST',
@@ -94,15 +95,15 @@
                             ],
                             footer: {
                                 text: "Desbravando o Mundo Digital",
-                                icon_url: "https://cdn.discordapp.com/attachments/1003636737995710604/1299469612668420147/Design_sem_nome_1_1.png" // Ícone opcional no rodapé
+                                icon_url: "https://cdn.discordapp.com/attachments/1003636737995710604/1299469612668420147/Design_sem_nome_1_1.png" 
                             }
                         }
                     ]
                 })
             }).then(() => {
-                console.log("Ebook Enviado.");
+                console.log("Notificação do ebook enviada ao Discord.");
             }).catch((error) => {
-                console.error("Erro ao enviar.", error);
+                console.error("Erro ao enviar ao Discord.", error);
             });
         });
     </script>
