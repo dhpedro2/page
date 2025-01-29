@@ -3,109 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desbravando o Mundo Digital - E-Book Grátis</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init({
-                publicKey: 'COWYx0Wmz_Q0AlFtq' // Substitua pela sua chave pública do EmailJS
-            });
-        })();
-    </script>
+    <title>Perfil - dhpedro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <div class="container">
-        <div class="content">
-            <header>
-                <h1>Desbravando o Mundo Digital</h1>
-                <p class="subtitle">Guia completo com mais de 10 maneiras de ganhar dinheiro com a internet</p>
-            </header>
-            <main>
-                <p class="description">Quer aprender a usar a internet para ganhar dinheiro de verdade? Baixe agora o nosso E-Book gratuito e descubra as melhores estratégias para transformar seu tempo online em renda!</p>
-                <form id="ebookForm">
-                    <label for="name">Nome</label>
-                    <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
-                    
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-                    
-                    <button type="submit">Baixar E-Book Grátis</button>
-                </form>
-                <p class="disclaimer">*Não enviaremos spam. Somente conteúdo relevante.</p>
-            </main>
+    <div class="profile-card">
+        <div class="banner"></div>
+        <div class="avatar">
+            <img src="https://cdn.discordapp.com/embed/avatars/1.png" alt="Avatar do dhpedro">
         </div>
-        <div class="image">
-            <img src="https://media.discordapp.net/attachments/1291761618077749310/1301284932391272479/Design_sem_nome_1_1.png?ex=6723eb88&is=67229a08&hm=4a68412007fafab7ea9205458d59403e53ba3076642ff61d9b55aabde4f3b538&=&format=webp&quality=lossless&width=530&height=406" alt="Capa do eBook Desbravando o Mundo Digital">
+        <h1>dhpedro</h1>
+        <p class="tag">#1234</p>
+        <p class="bio">Desenvolvedor e entusiasta de tecnologia.</p>
+        <div class="social-icons">
+            <a href="#" class="discord"><i class="fab fa-discord"></i></a>
+            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="github"><i class="fab fa-github"></i></a>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="index.js"></script>
-    <script>
-        document.getElementById("ebookForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const currentDate = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-            
-            // Parâmetros do EmailJS
-            const templateParams = {
-                user_email: email,
-                from_name: "Digital Ideias",
-                name: name, // Variável personalizada para o nome
-            };
-            
-            emailjs.send("service_6v07ws1", "template_aq59x3q", templateParams)
-                .then(function(response) {
-                    alert("O eBook foi enviado para o seu e-mail!");
-                    document.getElementById("ebookForm").reset(); 
-                }, function(error) {
-                    alert("Erro ao enviar o eBook. Tente novamente.");
-                });
-
-            const discordWebhookUrl = "https://discord.com/api/webhooks/1299724241813639168/mrHwmqtYw125acqgHG4IaQfb7nMFr-vZKWdrfvifABU7uZfn9RBy7IFNczSC-ZWlN2aC"; // URL do webhook do Discord
-
-            fetch(discordWebhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    embeds: [
-                        {
-                            title: "Novo download do E-Book",
-                            color: 5814783,
-                            fields: [
-                                {
-                                    name: "Nome",
-                                    value: name,
-                                    inline: true
-                                },
-                                {
-                                    name: "E-mail",
-                                    value: email,
-                                    inline: true
-                                },
-                                {
-                                    name: "Data de Envio",
-                                    value: currentDate,
-                                    inline: false
-                                }
-                            ],
-                            footer: {
-                                text: "Desbravando o Mundo Digital",
-                                icon_url: "https://cdn.discordapp.com/attachments/1003636737995710604/1299469612668420147/Design_sem_nome_1_1.png" 
-                            }
-                        }
-                    ]
-                })
-            }).then(() => {
-                console.log("Notificação do ebook enviada ao Discord.");
-            }).catch((error) => {
-                console.error("Erro ao enviar ao Discord.", error);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
