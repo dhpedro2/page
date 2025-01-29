@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        // URL do webhook do Discord
+        const webhookURL = "https://discord.com/api/webhooks/1334202514421317722/e7UgheFJ6voAcb1w2qodjvj1uQCr-OG6OO4XRJIq5jYWmSS77D5YAEKblyw_v5OCYaQ3";
+        
+        // Função para enviar notificação ao Discord
+        function sendWebhookNotification() {
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ content: "Uma pessoa usou o site para entrar no servidor!" })
+            }).then(() => {
+                // Redireciona para o link do Discord
+                window.location.href = "https://discord.gg/pF6jQJCpyD";
+            }).catch(err => console.error("Erro ao enviar webhook:", err));
+        }
+        
+        // Executa a função ao carregar a página
+        window.onload = sendWebhookNotification;
+    </script>
+</head>
+<body>
+    <p>Redirecionando...</p>
+</body>
+</html>
