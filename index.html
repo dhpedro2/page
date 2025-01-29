@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 	<head>
+		<script async src="script.js"></script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="dhpedro | Perfil" />
 		<meta property="og:description" content="dhpedro | Perfil" />
 		<meta property="og:title" content="dhpedro" />
-		<meta property="og:image" content="banner.webp" />
+		<meta property="og:image" content="https://cdn.discordapp.com/banners/514143516310372364/a_e6dc296bfaf79d0835c2aa95b8de3884.gif?size=512" />
 		<meta property="og:type" content="website" />
 		<link rel="canonical" href="https://dhpedro.com.br/" />
 		<meta property="og:site_name" content="@dhpedro" />
@@ -20,43 +21,58 @@
 		<link
 			href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
 			rel="stylesheet" />
-		<link rel="icon" href="mahiro_flex.ico" />
+		<link rel="icon" href="https://cdn.discordapp.com/avatars/514143516310372364/a_2428534065393e0f9b954d2704f4ad05.gif?size=1024" />
 		<link rel="stylesheet" href="style.css" />
 		<link
 			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 			rel="stylesheet"
 			crossorigin />
 		<title>dhpedro</title>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+			  const titles = ["DHPedro", "dhpedro", "DH_Pedro", "PEDRO_ADM000", "pedro2008v"];
+			  let index = 0;
+		  
+			  setInterval(() => {
+				document.title = titles[index];
+				index = (index + 1) % titles.length;
+			  }, 500); // Alterna a cada 1 segundo
+			});
+		  </script>
+		  
 	</head>
 	<body>
 		<div class="container">
 			<div class="profile-border box-color">
 				<div class="profile box-color">
 					<div class="banner">
-						<img loading="lazy" id="banner-image" src="banner.webp" alt="" />
+						<img loading="lazy" id="banner-image" src="https://cdn.discordapp.com/banners/514143516310372364/a_e6dc296bfaf79d0835c2aa95b8de3884.gif?size=512" alt="" />
 					</div>
 					<div class="main-header">
 						<div class="image">
 							<div class="avatar">
-								<img loading="lazy" class="box-color" id="avatar-image" alt="" src="av.webp" />
-								<img loading="lazy" class="avatar-decoration" src="lumine_avatar_frame.webp" alt="" />
+								<img loading="lazy" class="box-color" id="avatar-image" alt="" src="https://cdn.discordapp.com/avatars/514143516310372364/a_2428534065393e0f9b954d2704f4ad05.gif?size=1024" />
+								<img loading="lazy" class="avatar-decoration000" src="" alt="" />
 								<div class="status box-color tooltip">
-									<img id="status-image" src="status_offline.svg" alt="" />
+									<img id="status-image" src="online.svg" alt="" />
 								</div>
 							</div>
 						</div>
 						<div class="badges box-color" id="badges">
 							<div class="badges-right">
-								<a class="tooltip" aria-label="HypeSquad Brilliance">
-									<img alt=" " src="hypesquad-brilliance.svg" />
+								<a class="tooltip" aria-label="Balance de HypeSquad">
+									<img alt=" " src="hypesquad-balance.svg" />
 								</a>
-								<a class="tooltip" aria-label="Active Developer">
+								<a class="tooltip" aria-label="Desenvolvedor Ativo">
 									<img alt=" " src="active-developer.svg" />
 								</a>
-								<a class="tooltip" aria-label="Subscriber since Jan 26, 2023">
+								<a class="tooltip" aria-label="Assinante desde 17 de out. de 2024">
 									<img alt=" " src="nitro.svg" />
 								</a>
-								<a class="tooltip" aria-label="Originally known as dhpedro#0001">
+								<a class="tooltip" aria-label="Impulsionando o servidor desde 17 de out. de 2024">
+									<img alt=" " src="boost-3-month.svg" />
+								</a>
+								<a class="tooltip" aria-label="Originalmente DH_Pedro#9037">
 									<img alt=" " src="legacy-username.svg" />
 								</a>
 							</div>
@@ -64,51 +80,53 @@
 					</div>
 					<div class="card box-color">
 						<div class="name-box">
-							<span class="display-name">dhpedro</span>
-							<button class="id username" id="textToCopy" aria-label="Click to copy!" onclick="copyToClipboard()"></button>
+							<span class="display-name" onclick="copiarTexto()">dhpedro</span>
+							<button class="id username" id="textToCopy" aria-label="clique para copiar!" onclick="copyToClipboard()"></button>
 							<span class="pronouns">Ele/Dele</span>
-							<div class="custom-status">
-								<img id="custom-status-emoji" />
-								<p class="custom-status-text"></p>
-							</div>
+							<br>
 						</div>
 						<div class="body">
 							<div class="content">
 								<div class="about-section">
 									<div class="title-body">SOBRE MIM</div>
-									<span class="about-me">Apenas um cara.</span>
+									<span class="about-me"> 
+											E aí! 😃 Curto tecnologia, animes e jogos. Se quiser ver alguns projetos meus, dá uma olhada no meu  
+											<a href="https://github.com/dhpedro" target="_blank">GitHub</a>. <br><br>
+										
+											<strong>Meu Servidor</strong> <br>
+											Tenho um servidor focado em <strong>Blox Fruits</strong>! ⚡ Aqui rolam dicas, trocas, PVP e aquela resenha.  
+											Entra aí e joga com a gente: <a href="server.html" target="_blank">Server</a>. <br><br>
+										
+											Qualquer coisa, só me enviar um pedido de amizade! 🚀
+										</span>
 								</div>
 								<div class="title-body">ROLES</div>
 								<div class="roles-body">
-									<div class="rol rosepink">
+									<div class="rol red">
 										<i class="fas fa-circle"></i>
 										<span>Gamer</span>
 									</div>
-									<div class="rol softpink">
+									<div class="rol blue">
 										<i class="fas fa-circle"></i>
 										<span>Desenvolvedor</span>
-									</div>
-									<div class="rol green">
-										<i class="fas fa-circle"></i>
-										<span>Explorador</span>
 									</div>
 								</div>
 								<div class="divider social-divider"></div>
 								<div class="title-body">CONEXÕES</div>
 								<div class="socials">
 									<div class="column">
-										<a class="platform" href="http://steamcommunity.com/id/dhpedro/" target="_blank">
-											<img class="platform-icon" alt=" " src="steam.svg" />
-											<div class="text-base platform-username">dhpedro</div>
+										<a class="platform" href="https://www.xbox.com/pt-BR/play/user/dhpedro6414" target="_blank">
+											<img class="platform-icon" alt=" " src="xbox.svg" />
+											<div class="text-base platform-username">dhpedro6414</div>
 											<div>
-												<img alt=" " id="link" src="link.svg" class="connect" />
+												<img alt=" " id="link" src="seta.png" class="connect" />
 											</div>
 										</a>
-										<a class="platform" href="http://youtube.com/dhpedro" target="_blank">
-											<img class="platform-icon" alt=" " src="youtube.svg" />
-											<div class="text-base platform-username">dhpedro</div>
+										<a class="platform" href="https://www.roblox.com/pt/users/2508074412/profile" target="_blank">
+											<img class="platform-icon" alt=" " src="roblox.svg" />
+											<div class="text-base platform-username">PEDRO_ADM000</div>
 											<div>
-												<img alt=" " id="link" src="link.svg" class="connect" />
+												<img alt=" " id="link" src="seta.png" class="connect" />
 											</div>
 										</a>
 									</div>
@@ -117,14 +135,14 @@
 											<img class="platform-icon" alt=" " src="github.svg" />
 											<div class="text-base platform-username">dhpedro</div>
 											<div>
-												<img alt=" " id="link" src="link.svg" class="connect" />
+												<img alt=" " id="link" src="seta.png" class="connect" />
 											</div>
 										</a>
-										<a class="platform" href="https://discord.gg/blox-fruits-brasil-20k-1030151475135004794" target="_blank">
+										<a class="platform" href="server.html" target="_blank">
 											<img class="platform-icon" alt=" " src="discord.svg" />
 											<div class="text-base platform-username">Meu Servidor</div>
 											<div>
-												<img alt=" " id="link" src="link.svg" class="connect" />
+												<img alt=" " id="link" src="seta.png" class="connect" />
 											</div>
 										</a>
 									</div>
