@@ -36,23 +36,23 @@ function updateStatus(lanyardData) {
 	let label;
 	switch (discord_status) {
 		case "online":
-			imagePath = "./public/status/online.svg";
+			imagePath = "online.svg";
 			label = "Online";
 			break;
 		case "idle":
-			imagePath = "./public/status/idle.svg";
+			imagePath = "idle.svg";
 			label = "Idle / AFK";
 			break;
 		case "dnd":
-			imagePath = "./public/status/dnd.svg";
+			imagePath = "dnd.svg";
 			label = "Do Not Disturb";
 			break;
 		case "offline":
-			imagePath = "./public/status/offline.svg";
+			imagePath = "offline.svg";
 			label = "Offline";
 			break;
 		default:
-			imagePath = "./public/status/offline.svg";
+			imagePath = "offline.svg";
 			label = "Unknown";
 			break;
 	}
@@ -63,7 +63,7 @@ function updateStatus(lanyardData) {
 				activity.url.includes("youtube.com"))
 	);
 	if (isStreaming) {
-		imagePath = "./public/status/streaming.svg";
+		imagePath = "streaming.svg";
 		label = "Streaming";
 	}
 	elements.statusImage.src = imagePath;
@@ -75,9 +75,9 @@ function updateStatus(lanyardData) {
 	}
 	const emoji = activities[0]?.emoji;
 	if (emoji?.id) {
-		elements.customStatusEmoji.src = `https://cdn.discordapp.com/emojis/${emoji.id}?format=webp&size=24&quality=lossless`;
+		elements.customStatusEmoji.src = `https://cdn.discordapp.com/avatars/514143516310372364/a_2428534065393e0f9b954d2704f4ad05.gif?size=1024`;
 	} else if (emoji?.name) {
-		elements.customStatusEmoji.src = "./public/icons/poppy.png";
+		elements.customStatusEmoji.src = "https://cdn.discordapp.com/avatars/514143516310372364/a_2428534065393e0f9b954d2704f4ad05.gif?size=1024";
 	} else {
 		elements.customStatusEmoji.style.display = "none";
 	}
@@ -88,3 +88,16 @@ function updateStatus(lanyardData) {
 	}
 }
 startWebSocket();
+
+
+function copiarTexto() {
+	// Cria um campo de input temporário para copiar o texto
+	var tempInput = document.createElement('input');
+	document.body.appendChild(tempInput);
+	tempInput.value = document.querySelector('.display-name').textContent;
+	tempInput.select();
+	document.execCommand('copy');
+	document.body.removeChild(tempInput);
+	
+	alert('Texto copiado: ' + tempInput.value);
+  }
