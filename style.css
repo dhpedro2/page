@@ -34,15 +34,18 @@
 }
 
 :root {
-  --primary-h-top: 206deg;
-  --primary-s-top: 41%;
-  --primary-l-top: 88%;
-  --primary-h-bottom: 212deg;
-  --primary-s-bottom: 58%;
-  --primary-l-bottom: 44%;
-  --text-color: black;
-  --box-shadow-color: rgba(0, 0, 0, 0.1)
+  --primary-h-top: 0deg;    /* Vermelho (Hue = 0°) */
+  --primary-s-top: 100%;    /* Saturação máxima */
+  --primary-l-top: 50%;     /* Vermelho puro */
+
+  --primary-h-bottom: 0deg;  /* Preto mantém o mesmo hue */
+  --primary-s-bottom: 0%;    /* Sem saturação */
+  --primary-l-bottom: 0%;    /* Preto puro */
+
+  --text-color: rgb(0, 0, 0);  /* Melhor contraste no fundo escuro */
+  --box-shadow-color: rgba(255, 0, 0, 0.5); /* Sombra avermelhada */
 }
+
 
 .badges,
 .card,
@@ -122,7 +125,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../public/bg.webp");
+  background-image: url("https://image.tmdb.org/t/p/original/pfgndj46RLPVJRWkUSCJBgLJ93w.jpg");
   background-repeat: no-repeat;
   z-index: -1;
   filter: blur(5px);
@@ -193,10 +196,11 @@ body {
 
 .badges,
 .status {
-  --primary-s-top: 41%;
+  --primary-s-top: 100%;
   --primary-l-top: 97%;
   --primary-s-bottom: 41%;
   --primary-l-bottom: 97%
+  
 }
 
 .avatar #avatar-image {
@@ -217,13 +221,15 @@ body {
 }
 
 .status {
-  max-width: 34px;
-  max-height: 44px;
-  -webkit-transform: translate(50%, 50%);
-  transform: translate(50%, 50%);
-  bottom: 14.64%;
-  right: 14.64%
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10px; /* Ajuste conforme necessário */
+  right: 10px;  /* Ajuste conforme necessário */
+  transform: none; /* Remova o translate */
 }
+
 
 .body,
 .content {
@@ -602,11 +608,11 @@ a:hover.tooltip::after {
 }
 
 .softpink {
-  color: #f8bbd0
+  color: #000000
 }
 
 .rosepink {
-  color: #ecdcd4
+  color: #fa5300
 }
 
 .green {
@@ -615,6 +621,18 @@ a:hover.tooltip::after {
 
 .blue {
   color: #00aff4
+}
+
+.red {
+  color: #ff0000
+}
+
+.black {
+  color: #000000
+}
+
+.orange {
+  color: #ff8800
 }
 
 .chat-container {
@@ -638,7 +656,7 @@ a:hover.tooltip::after {
 
 @media (width <=640px) {
   .container::before {
-    background-image: url("../public/bg_mobile.webp");
+    background-image: url("https://w0.peakpx.com/wallpaper/446/475/HD-wallpaper-mushoku-tensei-top-25-best-mushoku-tensei-background-moshoku-tensei-thumbnail.jpg");
     margin: -2px;
     filter: blur(2px);
     background-color: rgba(0, 0, 0, .5);
