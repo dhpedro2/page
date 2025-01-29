@@ -1,27 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dhpedro</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="profile-card">
-        <div class="banner"></div>
-        <div class="avatar">
-            <img src="https://cdn.discordapp.com/avatars/514143516310372364/a_2428534065393e0f9b954d2704f4ad05.gif?size=1024" alt="Avatar do dhpedro">
-        </div>
-        <h1>dhpedro</h1>
-        <p class="tag">#0000</p>
-        <p class="bio">Desenvolvedor.</p>
-        <div class="social-icons">
-            <a href="https://discord.gg/blox-fruits-brasil-20k-1030151475135004794" class="discord"><i class="fab fa-discord"></i></a>
-            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="github"><i class="fab fa-github"></i></a>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="dhpedro | Perfil" />
+		<meta property="og:description" content="dhpedro | Perfil" />
+		<meta property="og:title" content="dhpedro" />
+		<meta property="og:image" content="banner.webp" />
+		<meta property="og:type" content="website" />
+		<link rel="canonical" href="https://dhpedro.com.br/" />
+		<meta property="og:site_name" content="@dhpedro" />
+		<meta name="keywords" content="dhpedro, discord, perfil" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="language" content="Portuguese" />
+		<meta name="author" content="dhpedro" />
+		<meta name="view-transition" content="same-origin" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playpen+Sans&display=swap"
+			rel="stylesheet" />
+		<link rel="icon" href="mahiro_flex.ico" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			rel="stylesheet"
+			crossorigin />
+		<title>dhpedro</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="profile-border box-color">
+				<div class="profile box-color">
+					<div class="banner">
+						<img loading="lazy" id="banner-image" src="banner.webp" alt="" />
+					</div>
+					<div class="main-header">
+						<div class="image">
+							<div class="avatar">
+								<img loading="lazy" class="box-color" id="avatar-image" alt="" src="av.webp" />
+								<img loading="lazy" class="avatar-decoration" src="lumine_avatar_frame.webp" alt="" />
+								<div class="status box-color tooltip">
+									<img id="status-image" src="status_offline.svg" alt="" />
+								</div>
+							</div>
+						</div>
+						<div class="badges box-color" id="badges">
+							<div class="badges-right">
+								<a class="tooltip" aria-label="HypeSquad Brilliance">
+									<img alt=" " src="hypesquad-brilliance.svg" />
+								</a>
+								<a class="tooltip" aria-label="Active Developer">
+									<img alt=" " src="active-developer.svg" />
+								</a>
+								<a class="tooltip" aria-label="Subscriber since Jan 26, 2023">
+									<img alt=" " src="nitro.svg" />
+								</a>
+								<a class="tooltip" aria-label="Originally known as dhpedro#0001">
+									<img alt=" " src="legacy-username.svg" />
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="card box-color">
+						<div class="name-box">
+							<span class="display-name">dhpedro</span>
+							<button class="id username" id="textToCopy" aria-label="Click to copy!" onclick="copyToClipboard()"></button>
+							<span class="pronouns">Ele/Dele</span>
+							<div class="custom-status">
+								<img id="custom-status-emoji" />
+								<p class="custom-status-text"></p>
+							</div>
+						</div>
+						<div class="body">
+							<div class="content">
+								<div class="about-section">
+									<div class="title-body">SOBRE MIM</div>
+									<span class="about-me">Apenas um cara.</span>
+								</div>
+								<div class="title-body">ROLES</div>
+								<div class="roles-body">
+									<div class="rol rosepink">
+										<i class="fas fa-circle"></i>
+										<span>Gamer</span>
+									</div>
+									<div class="rol softpink">
+										<i class="fas fa-circle"></i>
+										<span>Desenvolvedor</span>
+									</div>
+									<div class="rol green">
+										<i class="fas fa-circle"></i>
+										<span>Explorador</span>
+									</div>
+								</div>
+								<div class="divider social-divider"></div>
+								<div class="title-body">CONEXÕES</div>
+								<div class="socials">
+									<div class="column">
+										<a class="platform" href="http://steamcommunity.com/id/dhpedro/" target="_blank">
+											<img class="platform-icon" alt=" " src="steam.svg" />
+											<div class="text-base platform-username">dhpedro</div>
+											<div>
+												<img alt=" " id="link" src="link.svg" class="connect" />
+											</div>
+										</a>
+										<a class="platform" href="http://youtube.com/dhpedro" target="_blank">
+											<img class="platform-icon" alt=" " src="youtube.svg" />
+											<div class="text-base platform-username">dhpedro</div>
+											<div>
+												<img alt=" " id="link" src="link.svg" class="connect" />
+											</div>
+										</a>
+									</div>
+									<div class="column">
+										<a class="platform" href="https://github.com/dhpedro" target="_blank">
+											<img class="platform-icon" alt=" " src="github.svg" />
+											<div class="text-base platform-username">dhpedro</div>
+											<div>
+												<img alt=" " id="link" src="link.svg" class="connect" />
+											</div>
+										</a>
+										<a class="platform" href="https://discord.gg/blox-fruits-brasil-20k-1030151475135004794" target="_blank">
+											<img class="platform-icon" alt=" " src="discord.svg" />
+											<div class="text-base platform-username">Meu Servidor</div>
+											<div>
+												<img alt=" " id="link" src="link.svg" class="connect" />
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="chat-container">
+									<input type="text" id="message-input" placeholder="Mensagem para @dhpedro" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script async src="script.js"></script>
+		<script defer src="sub.js"></script>
+	</body>
 </html>
